@@ -12,8 +12,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    var player = playerSelection.toLowerCase();
-    if (player == "rock") {
+    if (playerSelection == "rock") {
         if (computerSelection === "paper") {
             return "You Lose! Paper beats Rock"
         }
@@ -25,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
-    if (player == "paper") {
+    if (playerSelection == "paper") {
         if (computerSelection === "scissors") {
             return "You Lose! Scissors beats Paper"
         }
@@ -37,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     
-    if (player == "scissors") {
+    if (playerSelection == "scissors") {
         if (computerSelection === "rock") {
             return "You Lose! Rock beats Scissors"
         }
@@ -51,9 +50,14 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    for (let i = 0; i < 6; i++) {
-        let playerSelection = prompt("Rock, Scissors, Paper");
-        let computerSelection = getComputerChoice();
-        alert(playRound(playerSelection,computerSelection));
+    let player = prompt("Rock, Scissors, Paper");
+    var playerSelection = player.toLowerCase();
+    let computerSelection = getComputerChoice();
+    if (playerSelection == "rock" || playerSelection == "scissors" || playerSelection == "paper") {
+        alert(playRound(playerSelection, computerSelection));
+    }
+
+    else {
+        alert("Invalid choice. Try again!");
     }
 }
