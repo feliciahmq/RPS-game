@@ -1,11 +1,82 @@
 <!DOCTYPE html>
+<html>
+
 <head>
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <script src="game.js"></script>
-    <button onclick="game()">start</button>
+    <div class="container" id="startContainer">
+        <button id="startButton">start game</button>
+    </div>
+
+    <div class="container" id="gameContainer">
+        <div class="header">
+            <h1>Rock, Paper, Scissors</h1>
+        </div>
+        <div class="boxes">
+            <div class="playerContainer">
+                <h1 class="name">Player</h1>
+                <div class="information">
+                    <div class="logo">
+                        <img class="playerLogo" src="images/athlete.png">
+                    </div>
+                    <div class="score" id="playerscore">
+                        <p>Score: 0</p>
+                    </div>
+                </div>
+                <div class="selections">
+                    <div class="press playerselection" id="rock">
+                        <p class="playerselectiontext" id="rockselection">Rock</p>
+                        <img class="selection" id="rockpng" src="images/rock.png">
+                    </div>
+                    <div class="press playerselection" id="paper">
+                        <p class="playerselectiontext" id="paperselection">Paper</p>
+                        <img class="selection" id="paperpng" src="images/paper.png">
+                    </div>
+                    <div class="press playerselection" id="scissors">
+                        <p class="playerselectiontext" id="scissorsselection">Scissors</p>
+                        <img class="selection" id="scissorspng" src="images/scissors.png">
+                    </div>
+                </div>
+            </div>
+            <div class="computerContainer">
+                <h1 class="name">Computer</h1>
+                <div class="information">
+                    <div class="logo">
+                        <img class="aiLogo" src="images/ai.png">
+                    </div>
+                    <div class="score" id="computerscore">
+                        <p>Score: 0</p>
+                    </div>
+                </div>
+                <div class="selections">
+                    <div class="computerselection" id="comprock">
+                        <p>Rock</p>
+                        <img class="selection" src="images/rock.png">
+                    </div>
+                    <div class="computerselection" id="comppaper">
+                        <p>Paper</p>
+                        <img class="selection" src="images/paper.png">
+                    </div>
+                    <div class="computerselection" id="compscissors">
+                        <p>Scissors</p>
+                        <img class="selection" src="images/scissors.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="endContainer" id="endContainer">
+            <div class="winninglogodiv">
+                <img class="winninglogo" id="userwinslogo" src="images/athlete.png">
+                <img class="winninglogo" id="compwinslogo" src="images/ai.png">
+            </div>
+            <p class="gameupdates"></p>
+            <button id="endbutton">play again?</button>
+        </div>
+        <script src="game.js"></script> 
+    </div>
 </body>
 </html>
